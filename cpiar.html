@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Copiar Texto</title>
+    <style>
+        .copyButton {
+            cursor: pointer;
+            padding: 5px 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            margin-top: 5px;
+            margin-bottom: 15px;
+        }
+
+        .textContainer {
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="textContainer">
+        <p>Rut: 20.800.247-3</p>
+        <button class="copyButton" onclick="copyText('20.800.247-3')">Copiar</button>
+    </div>
+    <div class="textContainer">
+        <p>Daniel Alvarado</p>
+        <button class="copyButton" onclick="copyText('Daniel Alvarado')">Copiar</button>
+    </div>
+    <div class="textContainer">
+        <p>Banco Caja de los Andes</p>
+        <button class="copyButton" onclick="copyText('Banco Caja de los Andes')">Copiar</button>
+    </div>
+    <div class="textContainer">
+        <p>Cuenta vista</p>
+        <button class="copyButton" onclick="copyText('Cuenta vista')">Copiar</button>
+    </div>
+    <div class="textContainer">
+        <p>20800247</p>
+        <button class="copyButton" onclick="copyText('20800247')">Copiar</button>
+    </div>
+    <div class="textContainer">
+        <p>daniel01521@gmail.com</p>
+        <button class="copyButton" onclick="copyText('daniel01521@gmail.com')">Copiar</button>
+    </div>
+
+    <script>
+        function copyText(text) {
+            const textArea = document.createElement('textarea');
+            textArea.value = text;
+            document.body.appendChild(textArea);
+            textArea.select();
+            document.execCommand('copy');
+            document.body.removeChild(textArea);
+            alert('Texto copiado: ' + text);
+        }
+    </script>
+</body>
+</html>
